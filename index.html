@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang=pt-br> 
+<head>
+    <link rel="stylesheet" href="./style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://api.fontshare.com/v2/css?f[]=plus-jakarta-sans@400&display=swap" rel="stylesheet">
+    <title>SiteLucas</title>
+</head>
+
+<body>
+    <div id="header">
+        <a href="#home">HOME</a>
+        <a href="#trabalhos">TRABALHOS</a>
+        <a href="#serviços">SERVIÇOS</a>
+        <span></span>
+    </div>
+    
+    <div id="home">
+        <img src="./assets/FotoDeLucasSorrindo.jpg" width="450px">
+        <p id="nome">LUCAS MIRANDA</p>
+        <p id="profissão">VIDEOMAKER</p>
+    </div>
+
+    <div id="trabalhos"></div>
+
+    <div class="trabalhos">
+    <div class="video"><video src="./assets/video1.mp4" muted></video></div>
+    <div class="video"><video src="./assets/video2.mp4" muted></video></div>
+    <div class="video"><video src="./assets/video3.mp4" muted></video></div>
+    <div class="video"><video src="./assets/video4.mp4" muted></video></div>
+    <div class="video"><video src="./assets/video5.mp4" muted></video></div>
+    </div>
+
+    <div class="popup-video">
+        <span>&times;</span>
+        <video src="./assets/video1.mp4" muted autoplay controls></video>
+    </div>
+
+<script>
+
+document.querySelectorAll(".trabalhos video").forEach(vid => {
+    vid.onclick = () =>{
+        document.querySelector('.popup-video').style.display = "block";
+        document.querySelector('.popup-video video').src = vid.getAttribute("src");
+    }
+});
+
+document.querySelector(".popup-video span").onclick = () =>{
+    document.querySelector('.popup-video').style.display = "none";
+}
+
+</script>
+
+</body>
+</html>
+

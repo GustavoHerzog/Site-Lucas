@@ -1,0 +1,138 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+body {
+    background-color: rgb(8, 9, 11);
+    color: white;
+}
+
+/* Cabeçalho */
+
+#header {
+    position: sticky;
+    top: 0;
+    background-color: rgb(8, 9, 11);
+    text-align: center;
+    line-height: 8vh;
+    height: 8vh;
+    z-index: 1;
+}
+
+#header span {
+    margin: 0 12%;
+    display: block;
+    border: 1px solid rgb(255, 255, 255);
+}
+
+#header a {
+    text-decoration: none;
+    color: white;
+    margin: 0 36px;
+}
+
+/* Home/Imagem de Lucas com o nome e filmmaker */
+
+#home {
+    position: relative;
+    text-align: center;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+#home img {
+    max-width: 60%;
+    border-radius: 10%;
+}
+
+#nome {
+    position: absolute;
+    top: 30%;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+
+    font-weight: bold;
+    letter-spacing: 0.4em;
+    font-size: 5.5em;
+}
+
+#profissão {
+    position: absolute;
+    top: 54%;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+
+    font-weight: 500;
+    letter-spacing: 0.4em;
+    font-size: 1.3em;
+}
+
+/* Vídeo Players */
+
+.trabalhos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4%;
+    justify-content: center;
+}
+
+.trabalhos .video {
+    height: auto;
+    width: 18%;
+    border: 2px solid #F1D047;
+    box-shadow: 0 5px 15px rgba(0,0,0,.7);
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+.trabalhos .video video {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: .2s linear;
+}
+
+.trabalhos .video:hover video {
+    transform: scale(1.1);
+}
+
+.popup-video {
+    position: fixed;
+    top: 0; left: 0;
+    z-index: 100;
+    background: rgb(8, 9, 11);
+    height: 100%;
+    width: 100%;
+    display: none;
+}
+
+.popup-video video {
+    position: absolute;
+    left: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 750px;
+    border: 3px solid #fff;
+    object-fit: cover;
+}
+
+.popup-video span {
+    position: absolute;
+    top: 5px; right: 20px;
+    font-size: 50px;
+    color: #fff;
+    font-weight: bolder;
+    z-index: 100;
+    cursor: pointer;
+}
+
+@media (max-width:768px){
+    .popup-video video {
+        width: 95%;
+    }
+}
