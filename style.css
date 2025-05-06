@@ -239,31 +239,25 @@ body {
   padding: 2% 0;
   border-top: 1px solid rgba(255, 255, 255, 0.6);
   justify-content: center;
-}
-
-#fim a {
-  text-decoration: none;
-  color: #08090B;
-  justify-content: center;
   align-items: center;
 }
 
 #fim button {
-  display: flex;           /* Torna o botão um container flex */
-  justify-content: center; /* Centraliza horizontalmente */
-  align-items: center;     /* Centraliza verticalmente */
-  gap: 6px;                /* Adiciona espaço entre o texto e o ícone */
-  width: auto;
-  flex-wrap: nowrap;
-  border: 1px solid white;
   border-radius: 25px;
-  padding: 1% 2%;      /* Adiciona padding para melhor aparência */
-  background-color: white;
-  color: rgb(0, 0, 0);            /* Cor do texto */
-  font-size: 0.9em;          /* Tamanho da fonte */
+  padding: .5% 1%;
+  cursor: pointer;         /* Muda o cursor para pointer */
+}
+
+#fim a {
+  display: flex;
+  gap: 4px;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: #08090B;
+  font-size: 1em;          /* Tamanho da fonte */
   letter-spacing: 0.12rem;
   font-weight: 570;
-  cursor: pointer;         /* Muda o cursor para pointer */
   transition: all 0.3s ease; /* Adiciona transição suave */
 }
 
