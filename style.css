@@ -17,21 +17,38 @@ body {
     top: 0;
     background-color: rgb(8, 9, 11);
     text-align: center;
-    line-height: 8vh;
-    height: 8vh;
+    line-height: 9vh;
+    height: 9vh;
     z-index: 999;
+    white-space: nowrap
 }
 
 #header span {
     margin: 0 12%;
     display: block;
-    border: 1px solid rgb(255, 255, 255);
+    border: 1px solid rgba(255, 255, 255, 0.6);
 }
 
 #header a {
     text-decoration: none;
-    color: white;
-    margin: 0 36px;
+    font-weight: 200;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0 30px;
+    transition: all 0.1 ease;
+}
+
+#header a:hover {
+  font-weight: bold;
+  color: white;
+}
+
+#conteudos-header {
+  margin: 0 12%;
+}
+
+#contact {
+  position: absolute;
+  left: 75%;
 }
 
 /* Home/Imagem de Lucas com o nome e filmmaker */
@@ -75,13 +92,14 @@ body {
 /* Vídeo Players */
 
 .grupo-de-videos {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    min-height: 80vh;
-    min-width: 45vh;
-    overflow: hidden;
-  }
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 80vh;
+  min-width: 45vh;
+  overflow: visible; /* Mude de 'hidden' para 'visible' */
+  padding: 20px 0; /* Espaço extra vertical */
+}
   
   /* Cada vídeo é um contêiner absoluto */
   .video {
@@ -91,7 +109,7 @@ body {
     left: 50%;
     width: 100%;
     height: 100%;
-    max-width: 45vh;
+    max-width: 48vh;
     max-height: 90vh;
     transform: translate(-50%, -50%) scale(0);
     opacity: 0;
@@ -100,6 +118,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 4px; /* Espaço para a borda */
+    box-sizing: border-box; /* Inclui o padding no dimensionamento */
   }
 
   
@@ -127,10 +147,11 @@ body {
   
   /* O próprio vídeo: responsivo e com proporção preservada */
   .video video {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    border: 4px solid #F1D047;
+    width: calc(100% - 8px); /* Compensa a borda */
+    height: calc(100% - 8px); /* Compensa a borda */
+    object-fit: cover; /* Mude de 'contain' para 'cover' se necessário */
+    display: block;
+    border: 3px solid #F1D047;
   }
 
 
@@ -162,7 +183,7 @@ body {
     font-size: 24px;
     background-color: #F1D047;
     color: #08090B;
-    border: 1px solid white;
+    border: 1px solid rgba(255, 255, 255, 0.6);
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
     display: flex;          /* Adicionado */
@@ -175,4 +196,65 @@ body {
 .seletor-botões button:hover {
     background-color: #f1cf47b4;
     transform: scale(1.1);
+}
+
+#serviços {
+  border-left: 3px solid white;
+  margin: 4% 12%;
+  padding-left: 2%;
+  font-weight: bold;
+  font-size: 3.2em;
+  line-height: 144%;
+}
+
+#serviços span {
+  display: block;
+}
+
+#serviços p {
+  transition: all .2s ease;
+  cursor: default;
+}
+
+#serviços p:hover {
+  color: #F1D047;
+}
+
+
+#fim {
+  display: flex;
+  margin: 0 12% 2% 12%;
+  padding: 2% 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.6);
+  justify-content: center;
+}
+
+#fim button {
+  display: flex;           /* Torna o botão um container flex */
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center;     /* Centraliza verticalmente */
+  gap: 6px;                /* Adiciona espaço entre o texto e o ícone */
+  width: auto;
+  flex-wrap: nowrap;
+  border: 1px solid white;
+  border-radius: 25px;
+  padding: 1% 2%;      /* Adiciona padding para melhor aparência */
+  background-color: white;
+  color: rgb(0, 0, 0);            /* Cor do texto */
+  font-size: 0.9em;          /* Tamanho da fonte */
+  letter-spacing: 0.12rem;
+  font-weight: 570;
+  cursor: pointer;         /* Muda o cursor para pointer */
+  transition: all 0.3s ease; /* Adiciona transição suave */
+}
+
+#fim button:hover {
+  background-color: rgba(255, 255, 255, 0.825); /* Efeito hover sutil */
+}
+
+#fim button svg {
+  padding-top: 2px;
+  width: 1.5rem;            /* Tamanho do ícone */
+  height: 1.5rem;
+  fill: white;            /* Cor do ícone */
 }
