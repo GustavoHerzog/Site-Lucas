@@ -23,33 +23,33 @@
 
     <div id="trabalhos"></div>
 
-    <div class="trabalhos">
-    <div class="video"><video src="./assets/video1.mp4" muted></video></div>
-    <div class="video"><video src="./assets/video2.mp4" muted></video></div>
-    <div class="video"><video src="./assets/video3.mp4" muted></video></div>
-    <div class="video"><video src="./assets/video4.mp4" muted></video></div>
-    <div class="video"><video src="./assets/video5.mp4" muted></video></div>
+    <div class="seletor-de-reels">
+
+        <div class="grupo-de-videos">
+            <div class="video" data-index="0" data-status="active"> <video src="./assets/video1.mp4" muted controls> </video> </div>
+            <div class="video" data-index="1" data-status="unknown"> <video src="./assets/video2.mp4" muted controls> </video> </div>
+            <div class="video" data-index="2" data-status="unknown"> <video src="./assets/video3.mp4" muted controls> </video> </div>
+            <div class="video" data-index="3" data-status="unknown"> <video src="./assets/video4.mp4" muted controls> </video> </div>
+            <div class="video" data-index="4" data-status="unknown"> <video src="./assets/video5.mp4" muted controls> </video> </div>
+            
+            <div class="seletor-botões">
+                <button id="botão-voltar" onclick="handleVoltarClick()">
+                    <ion-icon name="arrow-back-outline"></ion-icon>
+                </button>
+
+                <button id="botão-ir" onclick="handleIrClick()">
+                    <ion-icon name="arrow-forward-outline"></ion-icon>
+                </button>
+            </div>
+
+        </div>
+
     </div>
 
-    <div class="popup-video">
-        <span>&times;</span>
-        <video src="./assets/video1.mp4" muted autoplay controls></video>
-    </div>
+<script src="./script.js"> </script>
 
-<script>
-
-document.querySelectorAll(".trabalhos video").forEach(vid => {
-    vid.onclick = () =>{
-        document.querySelector('.popup-video').style.display = "block";
-        document.querySelector('.popup-video video').src = vid.getAttribute("src");
-    }
-});
-
-document.querySelector(".popup-video span").onclick = () =>{
-    document.querySelector('.popup-video').style.display = "none";
-}
-
-</script>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
 </body>
 </html>
