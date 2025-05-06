@@ -37,6 +37,19 @@ body {
     transition: all 0.1 ease;
 }
 
+#contact {
+  line-height: 9vh;
+  height: 9vh;
+  font-weight: 200;
+  color: rgba(255, 255, 255, 0.9);
+  vertical-align: middle
+}
+
+#contact ion-icon {
+  font-size: 20px;
+  vertical-align: -3px;
+}
+
 #header a:hover {
   font-weight: bold;
   color: white;
@@ -71,6 +84,7 @@ body {
     right: 0;
     left: 0;
     margin: 0 auto;
+    cursor: default;
 
     font-weight: bold;
     letter-spacing: 0.4em;
@@ -83,6 +97,7 @@ body {
     right: 0;
     left: 0;
     margin: 0 auto;
+    cursor: default;
 
     font-weight: 500;
     letter-spacing: 0.4em;
@@ -96,21 +111,18 @@ body {
   width: 100%;
   height: 100%;
   min-height: 80vh;
-  min-width: 45vh;
-  overflow: visible; /* Mude de 'hidden' para 'visible' */
-  padding: 20px 0; /* Espaço extra vertical */
+  margin-top: 4%;
 }
   
   /* Cada vídeo é um contêiner absoluto */
   .video {
-    margin-top: 1%;
     position: absolute;
     top: 50%;
     left: 50%;
     width: 100%;
     height: 100%;
     max-width: 48vh;
-    max-height: 90vh;
+    max-height: inherit;
     transform: translate(-50%, -50%) scale(0);
     opacity: 0;
     transition: transform 0.5s ease, opacity 0.5s ease;
@@ -118,8 +130,9 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 4px; /* Espaço para a borda */
     box-sizing: border-box; /* Inclui o padding no dimensionamento */
+    outline: 2px solid #F1D047;
+    box-shadow: 5px 2px 40px 10px #f1cf475b;
   }
 
   
@@ -147,11 +160,10 @@ body {
   
   /* O próprio vídeo: responsivo e com proporção preservada */
   .video video {
-    width: calc(100% - 8px); /* Compensa a borda */
-    height: calc(100% - 8px); /* Compensa a borda */
+    width: 100%;
+    height: 100%;
     object-fit: cover; /* Mude de 'contain' para 'cover' se necessário */
     display: block;
-    border: 3px solid #F1D047;
   }
 
 
@@ -181,7 +193,7 @@ body {
     height: 50px;
     border-radius: 50%;
     font-size: 24px;
-    background-color: #F1D047;
+    background-color: #f1cf47b6;
     color: #08090B;
     border: 1px solid rgba(255, 255, 255, 0.6);
     cursor: pointer;
@@ -227,6 +239,13 @@ body {
   padding: 2% 0;
   border-top: 1px solid rgba(255, 255, 255, 0.6);
   justify-content: center;
+}
+
+#fim a {
+  text-decoration: none;
+  color: #08090B;
+  justify-content: center;
+  align-items: center;
 }
 
 #fim button {
