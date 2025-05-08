@@ -5,6 +5,10 @@
     font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
     background-color: rgb(8, 9, 11);
     color: white;
@@ -46,8 +50,8 @@ body {
 }
 
 #contact ion-icon {
-  font-size: 20px;
-  vertical-align: -3px;
+  font-size: 24px;
+  vertical-align: -6px;
 }
 
 #header a:hover {
@@ -61,7 +65,7 @@ body {
 
 #contact {
   position: absolute;
-  left: 75%;
+  left: 83%;
 }
 
 /* Home/Imagem de Lucas com o nome e filmmaker */
@@ -69,8 +73,7 @@ body {
 #home {
     position: relative;
     text-align: center;
-    margin-top: 2%;
-    margin-bottom: 2%;
+    margin-top: 3%;
 }
 
 #home img {
@@ -82,7 +85,7 @@ body {
     position: absolute;
     top: 30%;
     right: 0;
-    left: 0;
+    left: 2%;
     margin: 0 auto;
     cursor: default;
 
@@ -104,6 +107,14 @@ body {
     font-size: 1.3em;
 }
 
+/* div entre */
+
+#trabalhos {
+  display: block;
+  height: 10vh;
+}
+
+
 /* Vídeo Players */
 
 .grupo-de-videos {
@@ -111,7 +122,6 @@ body {
   width: 100%;
   height: 100%;
   min-height: 80vh;
-  margin-top: 4%;
 }
   
   /* Cada vídeo é um contêiner absoluto */
@@ -180,7 +190,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 20px;
+    padding: 0 12px;
     z-index: 10;
 }
 
@@ -213,6 +223,7 @@ body {
 #serviços {
   border-left: 3px solid white;
   margin: 4% 12%;
+  margin-bottom: 5%;
   padding-left: 2%;
   font-weight: bold;
   font-size: 3.2em;
@@ -235,7 +246,7 @@ body {
 
 #fim {
   display: flex;
-  margin: 0 12% 2% 12%;
+  margin: 0 12% 1% 12%;
   padding: 2% 0;
   border-top: 1px solid rgba(255, 255, 255, 0.6);
   justify-content: center;
@@ -246,6 +257,7 @@ body {
   border-radius: 25px;
   padding: .5% 1%;
   cursor: pointer;         /* Muda o cursor para pointer */
+  transition: background-color 0.3s ease;
 }
 
 #fim a {
@@ -261,6 +273,7 @@ body {
   transition: all 0.3s ease; /* Adiciona transição suave */
 }
 
+
 #fim button:hover {
   background-color: rgba(255, 255, 255, 0.825); /* Efeito hover sutil */
 }
@@ -270,4 +283,603 @@ body {
   width: 1.5rem;            /* Tamanho do ícone */
   height: 1.5rem;
   fill: white;            /* Cor do ícone */
+}
+
+/* Media Queries */
+
+@media (max-width: 1199px) {
+  #contact {
+    left: 82%;
+  }
+  #contact ion-icon {
+    font-size: 24px;
+    vertical-align: -5px;
+  }
+  #home {
+    margin-top: 3%;
+  }
+  #home img {
+    max-width: 75%;
+    border-radius: 10%;
+  }
+  #nome {
+    font-size: 4.4em;  /* ESSE */
+    top: 35%;
+    left: 2.5%;
+  }
+  #trabalhos {
+    height: 11vh;
+  }
+  .grupo-de-videos {
+    min-height: 80vh;
+  }
+  .video {
+    max-width: 48vh;
+    max-height: 100vh;
+  }
+  .seletor-botões {
+    padding: 0 10px;   /* ESSE */
+  }
+  #serviços {
+    margin-top: 6%;
+    font-size: 3.2em;
+    line-height: 144%;
+  }
+}
+
+@media (max-width: 999px) {
+  #contact {
+    left: 81%;
+  }
+  #contact ion-icon {
+    font-size: 22px;
+    vertical-align: -5px;
+  }
+  #home {
+    margin-top: 3%;
+  }
+  #home img {
+    max-width: 75%;
+    border-radius: 10%;
+  }
+  #nome {
+    font-size: 3.5em;  /* ESSE */
+    top: 38%;
+    left: 2%;
+  }
+  #profissão {
+    top: 54%;
+  }
+  #trabalhos {
+    height: 14vh;
+  }
+  .grupo-de-videos {
+    min-height: 80vh;
+  }
+  .video {
+    max-width: 48vh;
+    max-height: 100vh;
+  }
+  .seletor-botões {
+    padding: 0 10px;   /* ESSE */
+  }
+  #serviços {
+    margin-top: 10%;
+    font-size: 2.8em;
+    line-height: 160%;
+  }
+  #fim button {
+    margin-top: 2.5%;
+    border-radius: 25px;
+    padding: 2% 2%;
+  }
+}
+
+@media (max-width: 799px) {
+  #header a {
+    margin: 0 30px;    /* ESSE */
+  }
+  #contact {
+    position: absolute;
+    left: 80%;
+  }
+  #contact ion-icon {
+    font-size: 22px;
+    vertical-align: -5px;
+  }
+  #home {
+    margin-top: 5%;
+  }
+  #home img {
+    max-width: 75%;
+    border-radius: 10%;
+  }
+  #nome {
+    font-size: 3em;  /* ESSE */
+    top: 38%;
+    left: 2%;
+  }
+  #profissão {
+    top: 54%;
+    font-size: 1.3em;
+  }
+  #trabalhos {
+    height: 14vh;
+  }
+  .grupo-de-videos {
+    min-height: 80vh;
+  }
+  .video {
+    max-width: 48vh;
+    max-height: 100vh;
+  }
+  .seletor-botões {
+    padding: 0 10px;   /* ESSE */
+  }
+  #serviços {
+    margin-left: 8%;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    font-size: 2.6em;   /* ESSE */
+    line-height: 180%;
+  }
+  #fim button {
+    margin-top: 2.5%;
+    border-radius: 25px;
+    padding: 2% 2%;
+  }
+}
+
+@media (max-width: 699px) {
+  #header a {
+    margin: 0 25px;    /* ESSE */
+  }
+  #contact {
+    position: absolute;
+    left: 80%;
+  }
+  #contact ion-icon {
+    font-size: 22px;
+    vertical-align: -5px;
+  }
+  #home {
+    margin-top: 8%;
+  }
+  #home img {
+    max-width: 75%;
+    border-radius: 10%;
+  }
+  #nome {
+    font-size: 2.75em;  /* ESSE */
+    top: 40%;
+    left: 2%;
+  }
+  #profissão {
+    top: 54%;
+    font-size: 1.3em;
+  }
+  #trabalhos {
+    height: 14vh;
+  }
+  .grupo-de-videos {
+    min-height: 80vh;
+  }
+  .video {
+    max-width: 48vh;
+    max-height: 100vh;
+  }
+  .seletor-botões {
+    padding: 0 10px;   /* ESSE */
+  }
+  #serviços {
+    margin-left: 8%;
+    margin-top: 15%;
+    margin-bottom: 10%;
+    font-size: 2.25em;   /* ESSE */
+    line-height: 200%;
+  }
+  #fim button {
+    margin-top: 2.5%;
+    border-radius: 25px;
+    padding: 2% 2%;
+  }
+}
+
+@media (max-width: 599px) {
+  #header a {
+    margin: 0 25px;    /* ESSE */
+  }
+  #contact {
+    position: absolute;
+    left: 80%;
+  }
+  #contact ion-icon {
+    font-size: 22px;
+    vertical-align: -5px;
+  }
+  #home img {
+    max-width: 75%;
+    border-radius: 10%;
+  }
+  #nome {
+    font-size: 2.5em;  /* ESSE */
+    top: 40%;
+  }
+  #profissão {
+    top: 54%;
+    font-size: 1.3em;
+  }
+  #trabalhos {
+    height: 10vh;
+  }
+  .grupo-de-videos {
+    min-height: 80vh;
+  }
+  .video {
+    max-width: 48vh;
+    max-height: 100vh;
+  }
+  .seletor-botões {
+    padding: 0 10px;   /* ESSE */
+  }
+  #serviços {
+    margin-left: 8%;
+    margin-top: 13%;
+    margin-bottom: 10%;
+    font-size: 2.1em;   /* ESSE */
+    line-height: 200%;
+  }
+  #fim button {
+    margin-top: 2.5%;
+    border-radius: 25px;
+    padding: 2% 2%;
+  }
+}
+
+@media (max-width: 569px) {
+  #header a {
+    margin: 0 17px;
+  }
+  #contact {
+    position: absolute;
+    left: 81%;
+  }
+  #contact ion-icon {
+    font-size: 22px;
+    vertical-align: -5px;
+  }
+  #home {
+    margin-top: 10%;
+  }
+  #home img {
+    max-width: 75%;
+    border-radius: 10%;
+  }
+  #nome {
+    font-size: 2.25em;
+    top: 40%;
+  }
+  #profissão {
+    top: 54%;
+    font-size: 1.3em;
+  }
+  #trabalhos {
+    height: 14vh;
+  }
+  .grupo-de-videos {
+    min-height: 80vh;
+  }
+  .video {
+    max-width: 48vh;
+    max-height: 100vh;
+  }
+  .seletor-botões {
+    padding: 0 15px;
+  }
+  #serviços {
+    margin-left: 8%;
+    margin-top: 15%;
+    margin-bottom: 10%;
+    font-size: 1.9em;
+    line-height: 200%;
+  }
+  #fim button {
+    margin-top: 2.5%;
+    border-radius: 25px;
+    padding: 2% 2%;
+  }
+}
+
+@media (max-width: 519px) {
+  #header a {
+    margin: 0 12px;
+    font-size: 1em;
+  }
+  #contact {
+    position: absolute;
+    left: 81%;
+  }
+  #contact ion-icon {
+    font-size: 22px;
+    vertical-align: -5px;
+  }
+  #home {
+    margin-top: 10%;
+  }
+  #home img {
+    max-width: 75%;
+    border-radius: 10%;
+  }
+  #nome {
+    font-size: 210%;
+    top: 40%;
+  }
+  #profissão {
+    top: 54%;
+    font-size: 1.3em;
+  }
+  #trabalhos {
+    height: 14vh;
+  }
+  .grupo-de-videos {
+    min-height: 80vh;
+  }
+  .video {
+    max-width: 48vh;
+    max-height: 100vh;
+  }
+  .seletor-botões {
+    padding: 0 15px;
+  }
+  #serviços {
+    margin-left: 8%;
+    margin-top: 15%;
+    margin-bottom: 10%;
+    font-size: 1.8em;
+    line-height: 200%;
+  }
+  #fim button {
+    margin-top: 2.5%;
+    border-radius: 25px;
+    padding: 2% 2%;
+  }
+}
+
+@media (max-width: 479px) {
+  #header {
+    height: 9.2vh;
+}
+  #header a {
+    margin: 0 11px;
+    font-size: 0.9em;
+  }
+  #contact {
+    position: absolute;
+    left: 81%;
+  }
+  #contact ion-icon {
+    font-size: 21px;
+    vertical-align: -6px;
+  }
+  #home {
+    margin-top: 10%;
+  }
+  #home img {
+    max-width: 75%;
+    border-radius: 10%;
+  }
+  #nome {
+    font-size: 194%;
+    top: 40%;
+  }
+  #profissão {
+    top: 54%;
+    font-size: 1em;
+  }
+  #trabalhos {
+    height: 14vh;
+  }
+  .grupo-de-videos {
+    min-height: 70vh;
+  }
+  .video {
+    max-width: 40vh;
+    max-height: 100vh;
+  }
+  .seletor-botões {
+    padding: 0 20px;
+  }
+  #serviços {
+    margin-left: 8%;
+    margin-top: 15%;
+    margin-bottom: 10%;
+    font-size: 1.6em;
+    line-height: 200%;
+  }
+  #fim button {
+    margin-top: 2.5%;
+    border-radius: 25px;
+    padding: 2% 2%;
+  }
+}
+
+@media (max-width: 425px) {
+  #header {
+    height: 9.2vh;
+}
+  #header a {
+    margin: 0 7px;
+    font-size: 0.9em;
+  }
+  #contact {
+    position: absolute;
+    left: 81%;
+  }
+  #contact ion-icon {
+    font-size: 21px;
+    vertical-align: -6px;
+  }
+  #home {
+    margin-top: 20%;
+  }
+  #home img {
+    max-width: 75%;
+    border-radius: 10%;
+  }
+  #nome {
+    font-size: 170%;
+    top: 40%;
+  }
+  #profissão {
+    top: 54%;
+    font-size: 1em;
+  }
+  #trabalhos {
+    height: 14vh;
+  }
+  .grupo-de-videos {
+    min-height: 70vh;
+  }
+  .video {
+    max-width: 40vh;
+    max-height: 100vh;
+  }
+  #serviços {
+    margin-left: 8%;
+    margin-top: 15%;
+    margin-bottom: 10%;
+    font-size: 1.5em;
+    line-height: 200%;
+  }
+  #fim button {
+    margin-top: 2.5%;
+    border-radius: 25px;
+    padding: 2% 2%;
+  }
+}
+
+@media (max-width: 399px) {
+  #header {
+    height: 9.5vh;
+}
+  #header a {
+    margin: 0 4px;
+    font-size: 0.8em;
+  }
+  #contact {
+    position: absolute;
+    left: 81%;
+  }
+  #contact ion-icon {
+    font-size: 18px;
+    vertical-align: -6px;
+  }
+  #home {
+    margin-top: 25%;
+  }
+  #home img {
+    max-width: 75%;
+    border-radius: 10%;
+  }
+  #nome {
+    font-size: 160%;
+    top: 40%;
+  }
+  #profissão {
+    top: 54%;
+    font-size: 1em;
+  }
+  #trabalhos {
+    height: 20vh;
+  }
+  .grupo-de-videos {
+    min-height: 70vh;
+  }
+  .video {
+    max-width: 40vh;
+    max-height: 100vh;
+  }
+  .seletor-botões {
+    padding: 0 10px;
+  }
+  .seletor-botões button {
+    width: 32px;
+    height: 32px;
+    font-size: 20px;
+  }
+  #serviços {
+    margin-left: 8%;
+    margin-top: 15%;
+    margin-bottom: 10%;
+    font-size: 1.35em;
+    line-height: 200%;
+  }
+  #fim button {
+    margin-top: 2.5%;
+    border-radius: 25px;
+    padding: 2% 2%;
+  }
+}
+
+@media (max-width: 359px) {
+  #header {
+    height: 9.5vh;
+}
+  #header a {
+    margin: 0 3px;
+    font-size: 0.7em;
+  }
+  #contact {
+    position: absolute;
+    left: 81%;
+  }
+  #contact ion-icon {
+    font-size: 18px;
+    vertical-align: -6px;
+  }
+  #home {
+    margin-top: 25%;
+  }
+  #home img {
+    max-width: 73%;
+    border-radius: 10%;
+  }
+  #nome {
+    font-size: 140%;
+    top: 40%;
+  }
+  #profissão {
+    top: 54%;
+    font-size: 1em;
+  }
+  #trabalhos {
+    height: 20vh;
+  }
+  .grupo-de-videos {
+    min-height: 60vh;
+  }
+  .video {
+    max-width: 32vh;
+    max-height: 100vh;
+  }
+  .seletor-botões {
+    padding: 0 10px;
+  }
+  .seletor-botões button {
+    width: 32px;
+    height: 32px;
+    font-size: 20px;
+  }
+  #serviços {
+    margin-left: 8%;
+    margin-top: 15%;
+    margin-bottom: 10%;
+    font-size: 1.2em;
+    line-height: 220%;
+  }
+  #fim button {
+    margin-top: 2%;
+    border-radius: 25px;
+    padding: 1% 3%;
+  }
 }
