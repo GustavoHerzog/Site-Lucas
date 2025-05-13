@@ -1,5 +1,5 @@
 let activeIndex = 0;
-let currentMediaType = 'videos'; // 'videos' ou 'fotos'
+let currentMediaType = 'videos';
 
 const videos = document.getElementsByClassName("video");
 const fotos = document.getElementsByClassName("foto");
@@ -8,7 +8,6 @@ const grupoFotos = document.querySelector(".grupo-de-fotos");
 const btnVideos = document.getElementById("btn-videos");
 const btnFotos = document.getElementById("btn-fotos");
 
-// Função para pausar todos os vídeos
 function pauseAllVideos() {
     const allVideos = document.querySelectorAll('.video video');
     allVideos.forEach(video => {
@@ -63,7 +62,6 @@ function handleVoltarClick() {
     updateMediaStatus(nextIndex, "backward");
 }
 
-// Alternar entre vídeos e fotos
 btnVideos.addEventListener('click', () => {
     if (currentMediaType !== 'videos') {
         pauseAllVideos();
@@ -103,7 +101,6 @@ function resetMediaStatus(mediaCollection) {
     }
 }
 
-// Remover highlight azul em botões mobile
 document.querySelectorAll('.seletor-botões button').forEach(button => {
     button.style.webkitTapHighlightColor = 'transparent';
     button.addEventListener('touchstart', function() {
