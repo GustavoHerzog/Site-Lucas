@@ -2,7 +2,7 @@
 <html lang=pt-br> 
 <head>
     <link rel="stylesheet" href="./style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" minimum-scale=1, maximum-scale=1, user-scalable=no">
     <link href="https://api.fontshare.com/v2/css?f[]=plus-jakarta-sans@400&display=swap" rel="stylesheet">
     <title>SiteLucas</title>
 </head>
@@ -20,34 +20,52 @@
     </div>
     
     <div id="home">
-        <img src="./assets/FotoDeLucasSorrindo.jpg" width="450px">
+        <img src="./assets/FotoDeLucasSorrindo.webp" width="450px">
         <p id="nome">LUCAS MIRANDA</p>
         <p id="profissão">VIDEOMAKER</p>
     </div>
 
-    <div id="trabalhos"></div>
+    
+    <div id="trabalhos">
+        <div class="toggle-buttons">
+            <button class="toggle-button active" id="btn-videos">VÍDEOS</button>
+            <button class="toggle-button" id="btn-fotos">FOTOS</button>
+        </div>
+    </div>
 
+    <div class="media-container">
     <div class="seletor-de-reels">
         <div class="grupo-de-videos">
-            <div class="video" data-index="0" data-status="active"> <video src="./assets/video1.mp4" autoplay muted controls loop> </video> </div>
-            <div class="video" data-index="1" data-status="unknown"> <video src="./assets/video2.mp4" controls loop> </video> </div>
-            <div class="video" data-index="2" data-status="unknown"> <video src="./assets/video3.mp4" controls loop> </video> </div>
-            <div class="video" data-index="3" data-status="unknown"> <video src="./assets/video4.mp4" controls loop> </video> </div>
-            <div class="video" data-index="4" data-status="unknown"> <video src="./assets/video5.mp4" controls loop> </video> </div>
-            <div class="video" data-index="5" data-status="unknown"> <video src="./assets/video6.mp4" controls loop> </video> </div>
-            
-            <div class="seletor-botões">
-                <button id="botão-voltar" onclick="handleVoltarClick()">
-                    <ion-icon name="arrow-back-outline"></ion-icon>
-                </button>
-
-                <button id="botão-ir" onclick="handleIrClick()">
-                    <ion-icon name="arrow-forward-outline"></ion-icon>
-                </button>
-            </div>
-
+            <div class="video" data-index="0" data-status="active"> <video src="./assets/video1mp4.mp4" autoplay muted controls loop> </video> </div>
+            <div class="video" data-index="1" data-status="unknown"> <video src="./assets/video2mp4.mp4" controls loop> </video> </div>
+            <div class="video" data-index="2" data-status="unknown"> <video src="./assets/video3mp4.mp4" controls loop> </video> </div>
+            <div class="video" data-index="3" data-status="unknown"> <video src="./assets/video4mp4.mp4" controls loop> </video> </div>
+            <div class="video" data-index="4" data-status="unknown"> <video src="./assets/video5mp4.mp4" controls loop> </video> </div>
+            <div class="video" data-index="5" data-status="unknown"> <video src="./assets/video6mp4.mp4" controls loop> </video> </div>
         </div>
+    </div>
 
+    <div class="grupo-de-fotos" style="display: none;">
+        <div class="foto" data-index="0" data-status="active"> <img src="./assets/foto1.jpg"> </div>
+        <div class="foto" data-index="1" data-status="unknown"> <img src="./assets/foto2.webp"> </div>
+        <div class="foto" data-index="2" data-status="unknown"> <img src="./assets/foto3.jpg"> </div>
+        <div class="foto" data-index="3" data-status="unknown"> <img src="./assets/foto4.jpg"> </div>
+        <div class="foto" data-index="4" data-status="unknown"> <img src="./assets/foto5.webp"> </div>
+        <div class="foto" data-index="5" data-status="unknown"> <img src="./assets/foto6.jpg"> </div>
+        <div class="foto" data-index="6" data-status="unknown"> <img src="./assets/foto7.jpg"> </div>
+        <div class="foto" data-index="7" data-status="unknown"> <img src="./assets/foto8.jpg"> </div>
+        <div class="foto" data-index="8" data-status="unknown"> <img src="./assets/foto9.jpg"> </div>
+    </div>
+
+    <div class="seletor-botões">
+        <button id="botão-voltar" onclick="handleVoltarClick()">
+            <ion-icon name="arrow-back-outline"></ion-icon>
+        </button>
+
+        <button id="botão-ir" onclick="handleIrClick()">
+            <ion-icon name="arrow-forward-outline"></ion-icon>
+        </button>
+    </div>
     </div>
 
     <div id="serviços">

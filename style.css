@@ -111,7 +111,7 @@ body {
 
 #trabalhos {
   display: block;
-  height: 10vh;
+  height: 11vh;
 }
 
 
@@ -176,22 +176,36 @@ body {
     display: block;
   }
 
+  .media-container {
+    position: relative;
+    width: 100%;
+    min-height: 80vh;
+}
 
 /* Substitua o seletor .seletor-botões existente por este: */
 .seletor-botões {
-    position: absolute;
-    width: 100%;
-    max-width: 70vh; /* Mesma largura máxima dos vídeos */
-    height: auto;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    pointer-events: none;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 12px;
-    z-index: 10;
+  position: absolute;
+  width: 100%;
+  max-width: 70vh;
+  height: auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 12px;
+  z-index: 10;
+}
+
+.seletor-botões button {
+  -webkit-tap-highlight-color: transparent; /* Remove o highlight azul no mobile */
+  outline: none; /* Remove contorno no focus */
+}
+
+.seletor-botões button:focus {
+  outline: none; /* Garante que não apareça outline no focus */
 }
 
 .seletor-botões button {
@@ -215,9 +229,132 @@ body {
     margin: 0;              /* Remove margem extra */
 }
 
+.grupo-de-videos, 
+.grupo-de-fotos {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 80vh;
+}
+
 .seletor-botões button:hover {
     background-color: #f1cf47b4;
     transform: scale(1.1);
+}
+
+
+#trabalhos {
+  display: flex;
+  height: 10vh;
+  position: relative; /* Adicionado */
+}
+/* Botões de alternância entre vídeos e fotos */
+.toggle-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  position: absolute; /* Alterado */
+  bottom: 10px; /* Distância do fundo */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  padding-bottom: 10px; /* Espaçamento extra */
+}
+
+.toggle-button {
+  padding: 8px 20px;
+  background-color: transparent;
+  color: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+}
+
+.toggle-button.active {
+  background-color: #f1cf47b6;
+  color: #08090B;
+  font-weight: bold;
+}
+
+.toggle-button {
+  /* seus estilos existentes... */
+  -webkit-tap-highlight-color: transparent; /* Remove o highlight padrão no mobile */
+  touch-action: manipulation; /* Melhora a responsividade do touch */
+}
+
+/* Remove o estado active persistente */
+.toggle-button:active, 
+.toggle-button.active:active {
+  transform: none;
+  transition: none;
+}
+
+/* Adicione um efeito visual para o toque */
+.toggle-button.touch-active {
+  transform: scale(0.95);
+  opacity: 0.9;
+  transition: transform 0.1s ease, opacity 0.1s ease;
+}
+
+/* Estilo para as fotos (similar aos vídeos) */
+.grupo-de-fotos {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 80vh;
+}
+
+.foto {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  max-width: 48vh;
+  max-height: inherit;
+  transform: translate(-50%, -50%) scale(0);
+  opacity: 0;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  z-index: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  outline: 2px solid #F1D047;
+  box-shadow: 5px 2px 40px 10px #f1cf475b;
+}
+
+.foto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Status das fotos (igual aos vídeos) */
+.foto[data-status="active"] {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+  z-index: 2;
+}
+
+.foto[data-status="becoming-active-from-before"],
+.foto[data-status="becoming-active-from-after"] {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+  z-index: 1;
+}
+
+.foto[data-status="before"],
+.foto[data-status="after"],
+.foto[data-status="unknown"] {
+  transform: translate(-50%, -50%) scale(0);
+  opacity: 0;
+  z-index: 0;
 }
 
 #serviços {
@@ -310,10 +447,10 @@ body {
   #trabalhos {
     height: 11vh;
   }
-  .grupo-de-videos {
+  .grupo-de-videos .grupo-de-fotos {
     min-height: 80vh;
   }
-  .video {
+  .video .foto {
     max-width: 48vh;
     max-height: 100vh;
   }
@@ -353,10 +490,10 @@ body {
   #trabalhos {
     height: 14vh;
   }
-  .grupo-de-videos {
+  .grupo-de-videos .grupo-de-fotos {
     min-height: 80vh;
   }
-  .video {
+  .video .foto {
     max-width: 48vh;
     max-height: 100vh;
   }
@@ -406,10 +543,10 @@ body {
   #trabalhos {
     height: 14vh;
   }
-  .grupo-de-videos {
+  .grupo-de-videos .grupo-de-fotos {
     min-height: 80vh;
   }
-  .video {
+  .video .foto {
     max-width: 48vh;
     max-height: 100vh;
   }
@@ -461,10 +598,10 @@ body {
   #trabalhos {
     height: 14vh;
   }
-  .grupo-de-videos {
+  .grupo-de-videos .grupo-de-fotos {
     min-height: 80vh;
   }
-  .video {
+  .video .foto {
     max-width: 48vh;
     max-height: 100vh;
   }
@@ -512,10 +649,10 @@ body {
   #trabalhos {
     height: 10vh;
   }
-  .grupo-de-videos {
+  .grupo-de-videos .grupo-de-fotos {
     min-height: 80vh;
   }
-  .video {
+  .video .foto {
     max-width: 48vh;
     max-height: 100vh;
   }
@@ -566,10 +703,10 @@ body {
   #trabalhos {
     height: 14vh;
   }
-  .grupo-de-videos {
+  .grupo-de-videos .grupo-de-fotos {
     min-height: 80vh;
   }
-  .video {
+  .video .foto {
     max-width: 48vh;
     max-height: 100vh;
   }
@@ -621,10 +758,10 @@ body {
   #trabalhos {
     height: 14vh;
   }
-  .grupo-de-videos {
+  .grupo-de-videos .grupo-de-fotos {
     min-height: 80vh;
   }
-  .video {
+  .video .foto {
     max-width: 48vh;
     max-height: 100vh;
   }
@@ -679,10 +816,10 @@ body {
   #trabalhos {
     height: 14vh;
   }
-  .grupo-de-videos {
+  .grupo-de-videos .grupo-de-fotos {
     min-height: 70vh;
   }
-  .video {
+  .video .foto {
     max-width: 40vh;
     max-height: 100vh;
   }
@@ -737,10 +874,10 @@ body {
   #trabalhos {
     height: 14vh;
   }
-  .grupo-de-videos {
+  .grupo-de-videos .grupo-de-fotos {
     min-height: 70vh;
   }
-  .video {
+  .video .foto {
     max-width: 40vh;
     max-height: 100vh;
   }
@@ -792,10 +929,14 @@ body {
   #trabalhos {
     height: 20vh;
   }
-  .grupo-de-videos {
+  .grupo-de-videos .grupo-de-fotos {
     min-height: 70vh;
   }
-  .video {
+    .video, .foto {
+    width: 42vh !important;
+    max-height: none !important; /* Remove limitações */
+  }
+  .video video .foto img {
     max-width: 40vh;
     max-height: 100vh;
   }
@@ -855,11 +996,16 @@ body {
   #trabalhos {
     height: 20vh;
   }
-  .grupo-de-videos {
-    min-height: 60vh;
+  .grupo-de-videos .grupo-de-fotos {
+    min-height: 70vh;
   }
-  .video {
-    max-width: 32vh;
+    .video, .foto {
+    width: 38vh !important;
+    height: 80vh !important;
+    max-height: none !important; /* Remove limitações */
+  }
+  .video video .foto img {
+    max-width: 40vh;
     max-height: 100vh;
   }
   .seletor-botões {
